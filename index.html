@@ -1,72 +1,197 @@
 <!doctype html>
 <html lang="EN-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <title>jon's github.io page</title>
+        <title>jon's github.io page</title>
 
-    <meta name="title" content="jon's github.io page">
+        <meta name="title" content="jon's github.io page" />
 
-    <style>
-        a {
-            text-decoration: none;
-        }
-        a:link, a:visited {
-            
-            color: #2e3944;
-        }
-        a:hover {
-            color: #124E66;
-        }
-        body { 
-            margin: 0px; 
-            overflow: hidden; 
-            background-color: #D3D9D4;
-        }
-        canvas {
-            padding-left: 0;
-            padding-right: 0;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
-        }
-        .top{
-  
-            background-color: #748D92;
-            border: 1px solid #124E66;
-            border-radius: 5px;
-            border-top-left-radius: 0px;
-            border-top-right-radius: 0px;
-            padding: 20px;
-            margin: 00px ;
+        <style>
+            :root{
+                --main-bg-color: #d3d9d4;
+                --obj-bg-color: #748d92;
+                --obj-shadow: #124e66;
+                --text-color : #000000;
+                --text-color2 : #cccccc;
+            }
+            html{
+                font-family: "Courier New", Courier, monospace;
+            }
+            body {
+                overflow: hidden;
+                background-color: var(--main-bg-color);
+                margin: 0px;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:link,a:visited {
+                color: var(--text-color);
+            }
+            a:hover {
+                color: var(--text-color);
+            }
+            .top {
+                background-color: var(--obj-bg-color);
+                border: 1px solid var(--obj-shadow);
+                border-radius: 5px;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                padding: 20px;
+                margin: 0px;
+                text-align: center;
+                font-weight: 200;
+            }
+            .box-canvas{
+                width:100%;
+                display: inline-block;
+                margin: 20px;
+            }
+            .box-container {
+                float:left;
+                position: relative;
+                padding: 5px;
+            }
+            .box {
+                text-align: center;
+                position: relative;
+                width: 200px;
+                height: 150px;
+                top: 0px;
+                left: 0px;
+                background-color: var(--obj-bg-color);
+                border-radius: 5px;
+                box-shadow: 5px 5px var(--obj-shadow);
+            }
+            .box:hover {
+                top: 2px;
+                left: 2px;
+                box-shadow: 1px 1px var(--obj-shadow);
+            }
+            .box-text{
+                position: relative;
+                width: 100%;
+                top: 5%;
+                height: 90%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-weight: 150;
+            }
+            .box-title{
+                font-size: 24px;
+                font-weight: 900;
+                text-align: center;
+                justify-content: center;
+                vertical-align: center;
+            }
+            h1{
+                padding: 0px 0px 0px 0px;
+                margin: 1px 0px 0px 0px;
+                font-family: "Courier New", Courier, monospace;
+            }
 
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-weight: 200;
-        }
-        .box {
-            width: 200px;
-            height: 150px;
-            background-color: #748D92;
-            border: 1px solid #124E66;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 20px auto;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            font-weight: 200;
-        }
-    </style>
+        </style>
     </head>
-    <body>
+    <a>
         <div class="top">
-            <h2><img src="imgs/alert-triangle.svg" alt="Webpage Under Construction"></h2>
-            <p>Welcome to my github.io page, currently under construction! You can visit some of my projects below</p>
+            <h2>
+                <img
+                    src="imgs/alert-triangle.svg"
+                    alt="Webpage Under Construction"
+                />
+            </h2>
+            <p>
+                Welcome to my github.io page, currently under construction! You
+                can visit some of my projects below
+            </p>
         </div>
-        <div class="box">
-            <h2><a href="hf-wasm/hf_wasm.html">hf-wasm</a></h2>
-            <p>A small toy app that computes energies with Restricted Hartree-Fock</p>
+        <div class="box-canvas">
+            <h1>personal projects</h1>
+            <div class="box-container">
+                <a href="hf-wasm/hf_wasm.html">
+                    <div class="box" >
+                        <div class="box-text">
+                            <div class="box-title">hf-wasm</div>
+                            <p >
+                                A toy app that computes energies with Restricted
+                                Hartree-Fock
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="box-container">
+                <a href="https://github.com/jquinl/blender-addons">
+                    <div class="box" >
+                        <div class="box-text">
+                            <div class="box-title">blender-addons</div>
+                            <p>
+                                Addons for blender, used in game development
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="box-canvas">
+            <h1>games</h1>
+            <div class="box-container">
+                <a href="https://kakiworks.itch.io/hot-fridge">
+                    <div class="box" >
+                        <div class="box-text">
+                            <div class="box-title">hot-fridge</div>
+                            <p>(programmer)</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="box-container">
+                <a href="https://jeqnld.itch.io/chaingun">
+                    <div class="box" >
+                        <div class="box-text">
+                            <div class="box-title">chaingun</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="box-container">
+                <a href="https://jeqnld.itch.io/tree-of-sisyphus">
+                    <div class="box" >
+                        <div class="box-text">
+                            <div class="box-title">tree of sisyphus</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="box-canvas">
+            <h1>publications</h1>
+            <div class="box-container">
+                <a href="http://dx.doi.org/10.1063/5.0099927">
+                    <div class="box" >
+                        <div class="box-text">
+                        <p>
+                           Stability of oxidized states of free-standing and ceria-supported PtOx particles
+                        </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="box-container">
+                <a href="http://dx.doi.org/10.1016/j.jcat.2023.03.004">
+                    <div class="box" >
+                        <div class="box-text">
+                        <p>
+                            States of Pt/CeO2 catalysts for CO oxidation below room temperature
+                        </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
         </div>
     </body>
 </html>
