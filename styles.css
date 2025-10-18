@@ -1,0 +1,519 @@
+:root{
+  --main-bg-color: #d3d9d4;
+  --obj-bg-color: #748d92;
+  --obj-shadow: #124e66;
+  --text-color : #000000;
+  --text-color2 : #cccccc;
+}
+
+html{
+/*  font-family: "Courier New", Courier, monospace;*/
+  font-family: Helvetica;
+}
+
+body {
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link,a:visited {
+  color: var(--text-color);
+}
+a:hover {
+  color: var(--text-color);
+}
+h1{
+}
+/* ------------------------ INTRO ------------------------------*/
+.hr-lerp{
+  margin:2;
+  width:0%;
+  transition: width 0.8s;
+}
+.hr-lerp.c-ve{
+  width: 100%;
+}
+.hr-lerp-container{
+  width:100%;
+  display:block;
+}
+.scroll-container{
+  overflow:hidden;
+}
+.scroll-section{
+  position:relative;
+  height : 100vh;
+  width : 100%;
+  overflow :hidden;
+}
+.centering{
+  width:100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.title-padding,
+.header-positioning-right,
+.header-positioning-left{
+  width : 100%;
+  padding-left:15%;
+  padding-right:15%;
+  box-sizing : border-box;
+  display : block;
+}
+.header-positioning-left{
+  text-align: left;
+}
+.header-positioning-right{
+  text-align: right;
+}
+.title-line{
+  display:block;
+}
+.title-line span{
+  display:inline-block;
+}
+.tl-1{
+  transform: translateY(100%) rotateX(-90deg);*/
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  opacity :0 ;
+  transition:
+      opacity 1.8s,
+      transform 1.8s;
+}
+.tl-1.c-ve{
+  opacity:1;
+  transform:none;
+  transition-delay:0.5s;
+}
+.tl-2{
+  transform: translateY(-100%) rotateX(-90deg);*/
+  transform-origin: center top;
+  transform-style: preserve-3d;
+  opacity :0 ;
+  transition:
+      opacity 1.8s,
+      transform 1.8s;
+}
+.tl-2.c-ve{
+  opacity:1;
+  transform:none;
+  transition-delay:1.5s;
+}
+.subtitle-1,.subtitle-2,
+.title-link-1,.title-link-2{
+  transform : scaleX(1);
+  transition: transform 0.3s ease;
+}
+.subtitle-1:has(~ .title-link-1:hover){
+  transform : translateX(-10px);
+}
+.title-link-1:hover ~ .subtitle-2{
+  transform : translateX(10px);
+}
+.title-link-1:hover ~ .title-link-2{
+  transform : translateX(10px);
+}
+.subtitle-1:has(~.title-link-2:hover),
+.subtitle-2:has(~.title-link-2:hover),
+.title-link-1:has(~.title-link-2:hover){
+  transform: translateX(-10px);
+}
+
+.title-link-1:hover,.title-link-2:hover{
+  transform : scale(1.05,1.05); 
+}
+
+.title-link-1-color{
+ background: radial-gradient(circle,rgba(255, 194, 194, 1) 0%, rgba(181, 207, 235, 1) 100%);
+}
+.title-link-2-color{
+  background: linear-gradient(73deg, #82f369 0%, #91cfff 40%, #ffaacc 100%);
+}
+.title-link-1-color,
+.title-link-2-color{
+  background-position: 0% 0%;;
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: black;
+  -webkit-text-fill-color: black;
+  transition:
+    color 1s ease ,
+   -webkit-text-fill-color 1s ease;
+  	animation: gradient 10s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.title-link-1-color.c-ve,
+.title-link-2-color.c-ve{
+  color : transparent;
+  -webkit-text-fill-color : transparent;
+}
+.title-link-1-color.c-ve{
+  transition-delay : 3.2s;
+}
+.title-link-2-color.c-ve{
+  transition-delay : 3.7s;
+}
+
+/* ------------------------ RESEARCH ------------------------------*/
+.page-container{
+  width :100%;
+  height :100%;
+  padding-left:15%;
+  padding-right:15%;
+  box-sizing : border-box;
+  display:block;
+}
+.page-hstack{
+  width: 100%;
+  height: 90%;
+  box-sizing : border-box;
+  display : inline-flex;
+
+}
+.page-title{
+  height: 10%;
+  width :100%;
+  
+}
+.hr-lerp-page{
+  width:100%;
+  padding-right:100%;
+  box-sizing : border-box;
+  transition: padding-right 1.5s;
+}
+.hr-lerp-page.c-ve{
+  padding-right: 0%;
+}
+.vl {
+  border-left: 2px solid black;
+  width : 2px;
+  height: 0%;
+  position: relative;
+  left : 50%;
+  margin-left: -1px;
+  top: 0;
+  transition: height 2s;
+}
+.vl-trigger{
+  height: 10%;
+  width : 0px;
+}
+.vl-area{
+  width  : 5em;
+  height : 90%;
+  display: inline-flex;
+  padding-bottom : 5%;
+  box-sizing : border-box;
+}
+.vl-trigger.c-ve + .vl{
+  height: 100%;
+}
+.publication-column{
+ width:30%;
+}
+
+.publication-box{
+  width:100%;
+  display: inline-flex;
+}
+.publication-trigger{
+  width: 0%;
+}
+.publication{
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  width    : 100%;
+  overflow : wrap;
+  display: block;
+  transform : translateX(-10%);
+  opacity : 0;
+  transition: 
+  transform 1.5s,
+  opacity 1.5s;
+}
+
+.publication-trigger.c-ve + .publication{
+  transform:none;
+  opacity:1;
+}
+.publication-box:nth-of-type(1) > .publication{transition-delay:  0.1s;}
+.publication-box:nth-of-type(2) > .publication{transition-delay:  0.2s;}
+.publication-box:nth-of-type(3) > .publication{transition-delay:  0.3s;}
+.publication-box:nth-of-type(4) > .publication{transition-delay:  0.4s;}
+
+.publication-text-area{
+  width:65%;
+  height:90%;
+  margin-left:5%;
+  margin-right:5%;
+  position:relative;
+  box-sizing : border-box;
+}
+.publication-text{
+  box-sizing : border-box;
+  margin-left:5%;
+  margin-right:5%;
+  top:100%;
+  bottom:0;
+  overflow-y:scroll;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+  position:absolute;
+  display:inline-block;
+  text-overflow:ellipsis ellipsis;
+  transition : 
+   top 1s;
+}
+.publication-text-area.pub-ta-1 >#publication-text-1{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.publication-text-area.pub-ta-2 >#publication-text-2{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.publication-text-area.pub-ta-3 >#publication-text-3{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.publication-text-area.pub-ta-4 >#publication-text-4{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.publication-underline{
+  width : 0%;
+  transition: width 0.3s ease;
+}
+.publication-trigger.c-ve + .publication .publication-underline{
+  width: 5%;
+}
+.publication-trigger.c-ve + .publication:hover .publication-underline{
+  width: 20%;
+}
+.publication-trigger.c-ve + .publication.sq-select .publication-underline{
+  width: 100%;
+}
+.text-fade-wrap{
+  background:linear-gradient(transparent ,white, white);
+  width:100%;
+  position:absolute;
+  left:0;
+  bottom:15%;
+  height:10%;
+  box-sizing : border-box;
+}
+/* ------------------------ GAMES------------------------------*/
+.game-column-box{
+  width: 30%;
+  height:90%;
+  padding-bottom: 5%;
+  display: block;
+  box-sizing : border-box;
+  overflow-y : scroll;
+  scrollbar-color: black transparent;
+  scrollbar-width: thin;
+}
+.game-card{
+  height: 130px;
+  width: 100%;
+  display : inline-flex;
+}
+.game-square-trigger{
+  top :20px;
+  width : 0%;
+  height : 80px;
+}
+.game-square{
+  opacity: 0;
+  border-radius:5px;
+  height : 120px;
+  width : 33%;
+  position:relative;
+  transform: translateX(-50%) scaleX(0.5);
+}
+.gsq-tenacy{
+  background-image: url("imgs/tenacy-game-card_320.gif");
+  background-size : 380px 380px;
+  background-position: 80% 50%;
+  background-repeat: no-repeat;
+}
+.gsq-chaing{
+  background-image: url("imgs/chaingun-game-card_320.gif");
+  background-size : 380px 380px;
+  background-position: 80% 40%;
+  background-repeat: no-repeat;
+}
+.gsq-hf{
+  background-image: url("imgs/hfridge-game-card_320.gif");
+  background-size : 380px 380px;
+  background-position: 60% 60%;
+  background-repeat: no-repeat;
+}
+.gsq-tr{
+  background-image: url("imgs/tree-game-card_320.gif");
+  background-size : 380px 380px;
+  background-position: 60% 60%;
+  background-repeat: no-repeat;
+}
+.game-card:nth-of-type(1) > .game-square{
+  transition:
+   width 0.5s ease 0s,
+   transform 2s ease 0.3s,
+   opacity 2s ease 0.3s;
+}
+.game-card:nth-of-type(2) > .game-square{
+  transition:
+   width 0.5s ease 0s,
+   transform 2s ease 0.6s,
+   opacity 2s ease 0.6s;
+}
+.game-card:nth-of-type(3) > .game-square{
+  transition:
+   width 0.5s ease 0s,
+   transform 2s ease 0.9s,
+   opacity 2s ease 0.9s;
+}
+.game-card:nth-of-type(4) > .game-square{
+  transition:
+   width 0.5s ease 0s,
+   transform 2s ease 1.2s,
+   opacity 2s ease 1.2s;
+}
+.game-card:nth-of-type(n+5) > .game-square{
+  transition:
+   width 0.5s ease 0s,
+   transform 2s ease 1.5s,
+   opacity 2s ease 1.5s;
+}
+.game-square-trigger.c-ve ~ .game-column-box > .game-card .game-square{
+  opacity:1;
+  transform : none; 
+}
+.game-square:hover:not(.sq-select){
+  width : 40%;
+}
+.game-square.sq-select{
+  width : 100%;
+}
+.game-card-text{
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  width : 100%;
+  top:0;
+  bottom:0;
+  position:absolute;
+  opacity : 0;
+  display: flex;
+  align-items: center;
+  transition : opacity 0.3s;
+}
+.game-card-text span{
+  width : 100%;
+  text-align: center;
+  color:white;
+  
+  background: linear-gradient(to right, #aaaaaa,#ffffff);
+  background-clip: text;
+  -webkit-background-clip: text; 
+  color :transparent; 
+  -webkit-text-fill-color: transparent; 
+}
+.game-card-text:hover{
+  opacity:1;
+}
+.game-card-text-bg{
+}
+.game-square.sq-select > .game-card-text{
+  opacity:1;
+}
+.game-title-name{
+  text-align : center;
+}
+.game-subtitle-name{
+  text-align : center;
+}
+.game-links{
+  display: flex;
+  justify-content: center;
+}
+.game-text-area{
+  width:65%;
+  height:90%;
+  margin-left:5%;
+  margin-right:5%;
+  position:relative;
+  box-sizing : border-box;
+}
+.game-text{
+  box-sizing : border-box;
+  margin-left:5%;
+  margin-right:5%;
+  top:100%;
+  bottom:0;
+  overflow-y:scroll;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+  position:absolute;
+  display:inline-block;
+  text-overflow:ellipsis ellipsis;
+  transition : 
+   top 1s;
+}
+.game-text-area.gm-ta-1 >#game-text-1{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.game-text-area.gm-ta-2 >#game-text-2{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.game-text-area.gm-ta-3 >#game-text-3{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+  scrollbar-color : black transparent;
+  top:0%;
+}
+.game-text-area.gm-ta-4 >#game-text-4{
+  transition : 
+   top 1s,
+   scrollbar-color 10s;
+  scrollbar-color : black transparent;
+  top:0%;
+}
