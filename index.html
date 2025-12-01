@@ -180,6 +180,13 @@
                 </div>
               </div>
             </div>
+            <div class="game-card">
+              <div class="game-square gsq-hfwasm gm-ta-5" onclick="game_square(this)" gm-square vis-anim>
+                <div class="game-card-text">
+                  <span> <h2>hf-wasm</h2></span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="game-text-area" id="el-expand-2">
             <div class="game-text" id="game-text-1">
@@ -261,6 +268,34 @@
                <a  href="https://jquinl.itch.io/tree-of-sisyphus"><img style="height:2em" src="imgs/itchio-textless-black.svg"></img></a>
               </div> 
             </div>
+            <div class="game-text" id="game-text-5">
+              <h1 class="game-title-name"><b>hf-wasm</b></h1>
+              <p class="game-subtitle-name"><i>Science!</i></p>
+              <br>
+              <span>
+                Not technically a game, hf-wasm is a toy app that calculates the Restricted Hartree-Fock energy of two Hydrogen atoms at different distances.
+              </span>
+              <br> 
+              <span>
+              I developed this app as a small project, this time to get familiarized with <b>Raylib</b> and <b>C</b> programming, as well as to brush up on theory.
+              </span>
+               <a  href="https://github.com/jquinl/hf-wasm"><img style="height:1em" src="imgs/external-link.svg"></img></a>
+              <br>
+              <br>
+              <div class="game-links">
+                <canvas class=emscripten id=canvas oncontextmenu=event.preventDefault() tabindex=-1></canvas>
+                <p id="output" />
+                <script>
+                    var Module = {
+                        canvas: (function () {
+                            var canvas = document.getElementById("canvas");
+                            return canvas;
+                        })(),
+                    };
+                </script>
+                <script async type="text/javascript" src="hf_wasm.js"></script>
+              </div>
+            </div>
           </div>
         </div>
       </div> 
@@ -281,6 +316,7 @@
         expandable2.classList.remove("gm-ta-2");
         expandable2.classList.remove("gm-ta-3");
         expandable2.classList.remove("gm-ta-4");
+        expandable2.classList.remove("gm-ta-5");
 
         for (var i = 0; i < collection.length; i++) {
             const element = collection[i];
@@ -304,6 +340,8 @@
             expandable2.classList.add("gm-ta-3");
           }else if(selected.classList.contains("gm-ta-4")){
             expandable2.classList.add("gm-ta-4");
+          }else if(selected.classList.contains("gm-ta-5")){
+            expandable2.classList.add("gm-ta-5");
           }
         }
       }
@@ -346,6 +384,8 @@
               expandable2.classList.remove("gm-ta-3");
             }else if(element.classList.contains("gm-ta-4")){
               expandable2.classList.remove("gm-ta-4");
+            }else if(element.classList.contains("gm-ta-5")){
+              expandable2.classList.remove("gm-ta-5");
             }
           }
         }
